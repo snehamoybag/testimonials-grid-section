@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* custom properties */
+
+:root {
+		--moderateViolet: hsl(263, 55%, 52%);
+		--darkGrayBlue: hsl(217, 19%, 35%);
+		--darkBlackBlue: hsl(219, 29%, 14%);
+		--white: hsl(0, 0%, 100%);
+		--lightGray: hsl(0, 0%, 81%);
+		--lightGrayBlue: hsl(210, 46%, 95%);
+		--fontFamily: 'Barlow Semi Condensed', sans-serif;
+		--wghtThin: 500;
+		--wghtBold: 600;
+		--vip: 2px solid hsl(263, 55%, 65%);
+		--boxShadow: 30px 45px 30px -20px hsla(0, 0%, 70%, 0.3);
+}
+
+/* mobile css */
+
+*, *::before, *::after {
+		margin: 0;
+		box-sizing: border-box;
+}
+body {
+		background-color: var(--lightGrayBlue);
+		font-family: var(--fontFamily);
+}
+
+main {
+		min-width: 100vw;
+		min-height: 100vh;
+		display: grid; /* to align the .testimonials on center */
+		justify-items: center;
+		align-items: center;		
+}
+
+.testimonials {
+		width: 87%;
+		display: grid;
+		grid-column-gap: 1.5rem;
+		grid-row-gap: 1.5rem;
+		justify-items: center;
+		margin: 2.5rem 0;
+}
+
+.comment {
+		max-width: calc(700rem / 16); /* 700px */
+		padding: 1.5rem 2rem 2rem;
+		border-radius: 10px;
+		color: var(--white);
+}
+
+.comment:nth-of-type(1) {
+		background-color: var(--moderateViolet);
+		background-image: url('images/bg-pattern-quotation.svg');
+		background-repeat: no-repeat;
+		background-position: top 0% left 90%;
+}
+
+.comment:nth-of-type(2) {
+		background-color: var(--darkGrayBlue);
+}
+
+.comment:nth-of-type(3) {
+		background-color: var(--white);
+		color: var(--darkGrayBlue);
+		box-shadow: var(--boxShadow);
+}
+
+.comment:nth-of-type(4) {
+		background-color: var(--darkBlackBlue);
+}
+
+.comment:nth-of-type(5) {
+		background-color: var(--white);
+		color: var(--darkGrayBlue);
+		box-shadow: var(--boxShadow);
+}
+
+.info {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+}
+
+.profilepic {
+		display: block;
+		width: 2em;
+		height: auto;
+		border-radius: 50%;
+}
+.vip {
+		border: var(--vip);
+}
+
+.name {
+		line-height: 1;
+}
+
+.name h1 {
+		font-size: calc(13em / 16);
+		font-weight: var(--wghtBold);
+		opacity: 90%;
+}
+
+.name em {
+		opacity: 50%;
+		font-style: normal;
+		font-size: calc(12em / 16);
+		font-weight: var(--wghtThin);
+}
+
+.highlight {
+		font-size: 1.20em;
+		font-weight: var(--wghtBold);
+		line-height: 1.2;
+		margin: 1rem 0;
+}
+
+.maincom {
+		font-size: calc(13em / 16);
+		opacity: 70%;
+		line-height: 1.4;
+		margin: 1rem 0 0;
+}
+
+/* desktop and wider screen css */
+
+@media(min-width: 90em){
+		main {
+				
+		}
+		.testimonials {
+				width: 80%;
+				max-width: calc(90rem * 0.8); /* 80% of 1440px */
+				grid-template-columns: repeat(4, 1fr);
+		}
+		.comment:first-of-type {
+				grid-column: 1/3;
+		}
+		.comment:last-of-type {
+				grid-column: 4/5;
+				grid-row: 1/3;
+		}
+		.comment:nth-of-type(4) {
+				grid-column: 2/4;
+		}
+		
+}
